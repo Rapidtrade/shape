@@ -1,0 +1,19 @@
+{
+  "name": "shape",
+  "version": "1.0.0",
+  "description": "Rapidtrade Build System for Getting apps into a cordova state",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "kevin bebel <kevin@rapidtrade.biz>",
+  "license": "ISC",
+  "devDependencies": {
+    "cordova": "^5.4.0",
+    "gulp": "^3.9.0",
+    "gulp-prompt": "^0.1.2"
+  },
+  "dependencies": {
+    "gulp-plumber": "^1.0.1"
+  }
+}
