@@ -5,6 +5,7 @@ var gulp = require('gulp'),
     cordova_create = require('gulp-cordova-create'),
     cordova_plugin = require('gulp-cordova-plugin'),
     runSequence = require('run-sequence'),
+    log = require('gulp-log2'),
     git = require('gulp-git');
 var project = { name : '', id : '', repo : ''};
 
@@ -63,21 +64,34 @@ gulp.task('clone',function(){
   });
 });
 
+//Deals with the creation of a cordova project
 gulp.task('create',function(){
-  console.log("=================== Starting the Cordova Create ===================");
   var options = {
        dir: 'build',
        id: 'com.rapidtarget',
        name: project.name ? project.name : 'rapidtarget'
    };
    gulp.src('source')
-  .pipe(cordova_create(options))
-  .pipe(cordova_plugin(['org.apache.cordova.device ','org.apache.cordova.geolocation','org.apache.cordova.camera']));
+   .pipe(log('==== Beginning cordova create ===='))
+   .pipe(cordova_create(options))
+   .pipe(log('==== Successfully created cordova project ===='))
+   .pipe(log('==== Adding cordova plugins ===='))
+   .pipe(cordova_plugin(['org.apache.cordova.device ','org.apache.cordova.geolocation','org.apache.cordova.camera']))
+   .pipe(log('==== Plugins added Successfully ===='));
+});
+
+gulp.task('build-ios', function(){
+
+});
+
+gulp.task('build-android', function(){
+
 });
 
 gulp.task('update', function(){
   console.log('update task');
 });
+
 gulp.task('clean', function(){
   del(['source/','build/']);
 });
