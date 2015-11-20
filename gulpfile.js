@@ -76,7 +76,7 @@ gulp.task('create',function(){
    .pipe(cordova_create(options))
    .pipe(log('==== Successfully created cordova project ===='))
    .pipe(log('==== Adding cordova plugins ===='))
-   .pipe(cordova_plugin(['org.apache.cordova.device ','org.apache.cordova.geolocation','org.apache.cordova.camera']))
+   .pipe(cordova_plugin(['org.apache.cordova.device ','org.apache.cordova.geolocation','org.apache.cordova.camera','https://github.com/apache/cordova-plugin-whitelist.git']))
    .pipe(log('==== Plugins added Successfully ===='));
 });
 
