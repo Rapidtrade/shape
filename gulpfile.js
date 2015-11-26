@@ -39,14 +39,22 @@ gulp.task('new', function(){
       message : 'Github Repository'
     }
   ],function(res){
+    if(!res.repo){
+      console.log("Please add in a Repository!!");
+      return;
+    }
+    if(!res.id){
+      console.log("Please add in a project id!!");
+      return;
+    }
+    if(!res.name){
+      console.log("Please add in a Project name!!");
+      return;
+    }
     project.name = res.name;
     project.id = res.id;
     project.repo = res.repo;
     //Runner the task that initializes the project folder
-    if(!res.repo){
-        console.log("Please add in a Repository!!");
-        return;
-    }
     gulp.start('clone');
   })
 );
@@ -85,7 +93,7 @@ gulp.task('build-ios', function(){
 });
 
 gulp.task('build-android', function(){
-
+    
 });
 
 gulp.task('update', function(){
