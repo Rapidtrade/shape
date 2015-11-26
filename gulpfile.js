@@ -68,7 +68,7 @@ gulp.task('clone',function(){
 gulp.task('create',function(){
   var options = {
        dir: 'build',
-       id: 'com.rapidtarget',
+       id: project.id,
        name: project.name ? project.name : 'rapidtarget'
    };
    gulp.src('source')
