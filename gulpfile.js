@@ -84,7 +84,7 @@ gulp.task('create',function(){
    .pipe(cordova_create(options))
    .pipe(log('==== Successfully created cordova project ===='))
    .pipe(log('==== Adding cordova plugins ===='))
-   .pipe(cordova_plugin(['cordova-plugin-device','org.apache.cordova.geolocation','org.apache.cordova.camera','https://github.com/apache/cordova-plugin-whitelist.git','org.apache.cordova.network-information','org.apache.cordova.vibration','org.apache.cordova.dialogs','cordova-plugin-splashscreen','cordova-plugin-ipad-multitasking','https://github.com/Rapidtrade/rap','cordova-sqlite-storage','cordova-plugin-barcodescanner']))
+   .pipe(cordova_plugin(['cordova-plugin-device','org.apache.cordova.geolocation','org.apache.cordova.camera','https://github.com/apache/cordova-plugin-whitelist.git','org.apache.cordova.network-information','org.apache.cordova.vibration','org.apache.cordova.dialogs','cordova-plugin-splashscreen','cordova-plugin-ipad-multitasking','https://github.com/Rapidtrade/rap','cordova-sqlite-storage','phonegap-plugin-barcodescanner']))
    .pipe(log('==== Plugins added Successfully ===='));
 });
 
